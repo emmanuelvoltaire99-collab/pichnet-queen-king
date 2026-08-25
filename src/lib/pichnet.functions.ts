@@ -14,9 +14,10 @@ export const listCandidates = createServerFn({ method: "GET" })
     const { signPhotoPaths } = await import("./photos.server");
     const supabase = createPublicServerClient();
 
-    const { data: rows, error } = await supabase.rpc("candidate_standings", {
-      _category: data.category ?? undefined,
-    });
+    const { data: rows, error } = await supabase.rpc(
+      "candidate_standings",
+      data.category ? { _category: data.category } : {},
+    );
     if (error) throw new Error(error.message);
 
     const list = (rows ?? []) as CandidateStanding[];
