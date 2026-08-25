@@ -12,8 +12,8 @@ const candidateInput = z.object({
   city: z.string().max(80).nullish(),
   biography: z.string().max(4000).nullish(),
   photo_url: z.string().max(500).nullish(),
-  is_active: z.boolean().optional(),
-  is_demo: z.boolean().optional(),
+  is_active: z.boolean().default(true),
+  is_demo: z.boolean().default(false),
 });
 
 export const amIAdmin = createServerFn({ method: "GET" })
