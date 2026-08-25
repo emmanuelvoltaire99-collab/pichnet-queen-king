@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ClassementRouteImport } from './routes/classement'
 import { Route as MasterRouteImport } from './routes/master'
 import { Route as MissRouteImport } from './routes/miss'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClassementRoute = ClassementRouteImport.update({
+  id: '/classement',
+  path: '/classement',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MasterRoute = MasterRouteImport.update({
@@ -31,30 +37,34 @@ const MissRoute = MissRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/classement': typeof ClassementRoute
   '/master': typeof MasterRoute
   '/miss': typeof MissRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/classement': typeof ClassementRoute
   '/master': typeof MasterRoute
   '/miss': typeof MissRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/classement': typeof ClassementRoute
   '/master': typeof MasterRoute
   '/miss': typeof MissRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/master' | '/miss'
+  fullPaths: '/' | '/classement' | '/master' | '/miss'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/master' | '/miss'
-  id: '__root__' | '/' | '/master' | '/miss'
+  to: '/' | '/classement' | '/master' | '/miss'
+  id: '__root__' | '/' | '/classement' | '/master' | '/miss'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ClassementRoute: typeof ClassementRoute
   MasterRoute: typeof MasterRoute
   MissRoute: typeof MissRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/classement': {
+      id: '/classement'
+      path: '/classement'
+      fullPath: '/classement'
+      preLoaderRoute: typeof ClassementRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/master': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ClassementRoute: ClassementRoute,
   MasterRoute: MasterRoute,
   MissRoute: MissRoute,
 }
