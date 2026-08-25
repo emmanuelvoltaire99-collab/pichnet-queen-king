@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ClassementRouteImport } from './routes/classement'
 import { Route as MasterRouteImport } from './routes/master'
 import { Route as MissRouteImport } from './routes/miss'
+import { Route as CandidatIdRouteImport } from './routes/candidat.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const MissRoute = MissRouteImport.update({
   path: '/miss',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CandidatIdRoute = CandidatIdRouteImport.update({
+  id: '/candidat/$id',
+  path: '/candidat/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/classement': typeof ClassementRoute
   '/master': typeof MasterRoute
   '/miss': typeof MissRoute
+  '/candidat/$id': typeof CandidatIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/classement': typeof ClassementRoute
   '/master': typeof MasterRoute
   '/miss': typeof MissRoute
+  '/candidat/$id': typeof CandidatIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/classement': typeof ClassementRoute
   '/master': typeof MasterRoute
   '/miss': typeof MissRoute
+  '/candidat/$id': typeof CandidatIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/classement' | '/master' | '/miss'
+  fullPaths: '/' | '/classement' | '/master' | '/miss' | '/candidat/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/classement' | '/master' | '/miss'
-  id: '__root__' | '/' | '/classement' | '/master' | '/miss'
+  to: '/' | '/classement' | '/master' | '/miss' | '/candidat/$id'
+  id: '__root__' | '/' | '/classement' | '/master' | '/miss' | '/candidat/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +76,7 @@ export interface RootRouteChildren {
   ClassementRoute: typeof ClassementRoute
   MasterRoute: typeof MasterRoute
   MissRoute: typeof MissRoute
+  CandidatIdRoute: typeof CandidatIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +109,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MissRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/candidat/$id': {
+      id: '/candidat/$id'
+      path: '/candidat/$id'
+      fullPath: '/candidat/$id'
+      preLoaderRoute: typeof CandidatIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   ClassementRoute: ClassementRoute,
   MasterRoute: MasterRoute,
   MissRoute: MissRoute,
+  CandidatIdRoute: CandidatIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
