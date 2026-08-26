@@ -8,13 +8,13 @@ import { candidatesQuery } from "@/lib/queries";
 export const Route = createFileRoute("/master")({
   head: () => ({
     meta: [
-      { title: "Candidats Master PICHNET 2026" },
+      { title: "Candidats Mister PICHNET 2026" },
       {
         name: "description",
         content:
-          "Découvrez tous les candidats au titre de Master PICHNET 2026 : profils, régions et nombre de votes.",
+          "Découvrez tous les candidats au titre de Mister PICHNET 2026 : profils, régions et nombre de votes.",
       },
-      { property: "og:title", content: "Candidats Master PICHNET 2026" },
+      { property: "og:title", content: "Candidats Mister PICHNET 2026" },
       {
         property: "og:description",
         content: "Des jeunes hommes engagés et talentueux, édition 2026.",
@@ -32,7 +32,7 @@ function MasterPage() {
     <PageShell>
       <div className="mx-auto max-w-6xl px-4 py-12">
         <h1 className="text-3xl font-extrabold md:text-4xl">
-          Candidats <span className="text-master">Master</span> 2026
+          Candidats <span className="text-master">Mister</span> 2026
         </h1>
         <p className="mt-2 max-w-xl text-sm text-muted-foreground">
           {data.length} candidat{data.length === 1 ? "" : "s"} en compétition. Cliquez sur un profil

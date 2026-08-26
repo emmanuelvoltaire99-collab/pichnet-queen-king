@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MISS & MASTER PICHNET 2026" },
+      { title: "MISS & MISTER PICHNET 2026" },
       {
         name: "description",
         content:
-          "Découvrez les candidates Miss et candidats Master PICHNET 2026, consultez leurs profils et votez.",
+          "Découvrez les candidates Miss et candidats Mister PICHNET 2026, consultez leurs profils et votez.",
       },
       { name: "author", content: "PICHNET" },
-      { property: "og:title", content: "MISS & MASTER PICHNET 2026" },
+      { property: "og:title", content: "MISS & MISTER PICHNET 2026" },
       {
         property: "og:description",
         content: "La beauté, l'élégance et la culture camerounaise.",

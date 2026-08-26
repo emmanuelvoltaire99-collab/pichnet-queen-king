@@ -23,7 +23,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link to="/master" className="hover:text-accent">
-                Candidats Master
+                Candidats Mister
               </Link>
             </li>
             <li>

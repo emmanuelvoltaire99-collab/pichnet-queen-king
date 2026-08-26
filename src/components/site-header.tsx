@@ -9,7 +9,7 @@ import { PichnetLogo } from "./pichnet-logo";
 const NAV = [
   { to: "/", label: "Accueil" },
   { to: "/miss", label: "Miss" },
-  { to: "/master", label: "Master" },
+  { to: "/master", label: "Mister" },
   { to: "/classement", label: "Classement" },
   { to: "/vote", label: "Voter" },
 ] as const;

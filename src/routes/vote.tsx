@@ -19,13 +19,13 @@ export const Route = createFileRoute("/vote")({
   }),
   head: () => ({
     meta: [
-      { title: "Voter — MISS & MASTER PICHNET 2026" },
+      { title: "Voter — MISS & MISTER PICHNET 2026" },
       {
         name: "description",
         content:
           "Choisissez votre candidat favori et un pack de votes pour soutenir sa candidature au concours PICHNET 2026.",
       },
-      { property: "og:title", content: "Voter — MISS & MASTER PICHNET 2026" },
+      { property: "og:title", content: "Voter — MISS & MISTER PICHNET 2026" },
       {
         property: "og:description",
         content: "Soutenez votre favori avec un pack de votes sécurisé.",
