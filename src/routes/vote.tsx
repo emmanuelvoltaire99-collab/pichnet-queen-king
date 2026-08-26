@@ -15,7 +15,7 @@ import type { PaymentIntentResult } from "@/lib/types";
 
 export const Route = createFileRoute("/vote")({
   validateSearch: (search: Record<string, unknown>) => ({
-    candidat: typeof search.candidat === "string" ? search.candidat : undefined,
+    candidat: typeof search["candidat"] === "string" ? search["candidat"] : undefined,
   }),
   head: () => ({
     meta: [

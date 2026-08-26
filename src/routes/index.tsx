@@ -47,7 +47,7 @@ function Index() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
-              <Link to="/vote">Voter maintenant</Link>
+              <Link to="/vote" search={{ candidat: undefined }}>Voter maintenant</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link to="/classement">Voir le classement</Link>

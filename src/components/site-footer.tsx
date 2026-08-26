@@ -32,9 +32,9 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link to="/vote" className="hover:text-accent">
-                Voter
-              </Link>
+                <Link to="/vote" search={{ candidat: undefined }} className="hover:text-accent">
+                  Voter
+                </Link>
             </li>
           </ul>
         </div>

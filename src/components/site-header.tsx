@@ -49,7 +49,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button asChild size="sm" className="hidden md:inline-flex">
-            <Link to="/vote">Voter</Link>
+            <Link to="/vote" search={{ candidat: undefined }}>Voter</Link>
           </Button>
           <Link
             to={signedIn ? "/admin" : "/auth"}
