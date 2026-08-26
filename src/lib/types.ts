@@ -35,7 +35,7 @@ export type PaymentIntentResult = {
 
 export const CATEGORY_LABEL: Record<Category, string> = {
   miss: "Miss",
-  master: "Master",
+  master: "Mister",
 };
 
 export function candidateFullName(c: { first_name: string; last_name: string }) {

@@ -10,11 +10,11 @@ import { candidateFullName, type CandidateStanding } from "@/lib/types";
 export const Route = createFileRoute("/classement")({
   head: () => ({
     meta: [
-      { title: "Classement en direct — MISS & MASTER PICHNET 2026" },
+      { title: "Classement en direct — MISS & MISTER PICHNET 2026" },
       {
         name: "description",
         content:
-          "Suivez le classement en direct des candidates Miss et candidats Master PICHNET 2026, calculé sur les votes payés.",
+          "Suivez le classement en direct des candidates Miss et candidats Mister PICHNET 2026, calculé sur les votes payés.",
       },
       { property: "og:title", content: "Classement en direct — PICHNET 2026" },
       {
@@ -91,7 +91,7 @@ function Classement() {
         <Tabs defaultValue="miss" className="mt-8">
           <TabsList>
             <TabsTrigger value="miss">Miss</TabsTrigger>
-            <TabsTrigger value="master">Master</TabsTrigger>
+            <TabsTrigger value="master">Mister</TabsTrigger>
           </TabsList>
           <TabsContent value="miss">
             <Table rows={miss} />

@@ -11,7 +11,7 @@ export function PichnetLogo({ className }: { className?: string }) {
       <span className="flex flex-col leading-none">
         <span className="text-sm font-extrabold tracking-tight text-foreground">PICHNET</span>
         <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
-          Miss &amp; Master 2026
+          Miss &amp; Mister 2026
         </span>
       </span>
     </span>

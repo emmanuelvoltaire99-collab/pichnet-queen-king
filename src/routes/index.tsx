@@ -10,13 +10,13 @@ import { candidatesQuery } from "@/lib/queries";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MISS & MASTER PICHNET 2026 — Site officiel" },
+      { title: "MISS & MISTER PICHNET 2026 — Site officiel" },
       {
         name: "description",
         content:
-          "Découvrez les candidates Miss et candidats Master PICHNET 2026, consultez leurs profils et soutenez votre favori par un vote payant.",
+          "Découvrez les candidates Miss et candidats Mister PICHNET 2026, consultez leurs profils et soutenez votre favori par un vote payant.",
       },
-      { property: "og:title", content: "MISS & MASTER PICHNET 2026 — Site officiel" },
+      { property: "og:title", content: "MISS & MISTER PICHNET 2026 — Site officiel" },
       {
         property: "og:description",
         content: "Beauté, élégance et culture camerounaise. Votez pour votre favori.",
@@ -39,7 +39,7 @@ function Index() {
             <Sparkles className="size-3" /> Édition 2026
           </p>
           <h1 className="text-balance-title mt-5 max-w-3xl text-4xl font-extrabold leading-tight md:text-6xl">
-            MISS &amp; MASTER <span className="text-accent">PICHNET</span> 2026
+            MISS &amp; MISTER <span className="text-accent">PICHNET</span> 2026
           </h1>
           <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
             Le concours officiel qui célèbre la beauté, l'élégance et la richesse culturelle du
@@ -47,7 +47,7 @@ function Index() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
-              <Link to="/vote">Voter maintenant</Link>
+              <Link to="/vote" search={{ candidat: undefined }}>Voter maintenant</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link to="/classement">Voir le classement</Link>
@@ -66,7 +66,7 @@ function Index() {
           },
           {
             icon: Trophy,
-            title: "Candidats Master",
+            title: "Candidats Mister",
             text: "Des jeunes hommes engagés, porteurs de talents et de valeurs.",
             to: "/master" as const,
           },
